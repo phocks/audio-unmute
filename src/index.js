@@ -1,4 +1,5 @@
 import App from "./components/App";
+import MuteToggle from "./components/MuteToggle";
 
 const PROJECT_NAME = "audio-unmute";
 const root = document.querySelector(`[data-${PROJECT_NAME}-root]`);
@@ -7,19 +8,7 @@ function init() {
   console.log(":)");
   root.appendChild(new App({ projectName: PROJECT_NAME }).el);
 
-  const unmuteButton = document.getElementById("unmute-button");
-
-  unmuteButton.onclick = () => {
-    const videos = document.querySelectorAll(".VideoPlayer");
-
-    videos.forEach(video => {
-      console.log(video);
-      console.log(video.api.isMuted());
-
-      if (video.api.isMuted()) video.api.setMuted(false);
-      else if (!video.api.isMuted()) video.api.setMuted(true);
-    });
-  };
+  MuteToggle();
 }
 
 // Wait for Odyssey before init
