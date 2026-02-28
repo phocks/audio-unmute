@@ -15,6 +15,6 @@
     "test": "aunty test"
   },
   "devDependencies": {
-    "@abcnews/aunty": "^10.8.0"
+    "@abcnews/aunty": "^10.10.0"
   }
 }
